@@ -4,6 +4,7 @@ Examen_Correcion
 import tkinter as tk
 from tkinter import messagebox
 import random
+import sys  # Añadimos sys para cerrar el programa al final
 
 # Clase del juego
 class Game:
@@ -124,10 +125,11 @@ def adivinar_moneda(eleccion):
     else:
         finalizar_juego()
 
+# Función para cerrar el programa al finalizar el juego
 def finalizar_juego():
-    game.mostrar_puntaje_total()
-    game_window.withdraw()  # Ocultamos la ventana del juego
-    root.deiconify()  # Volvemos a mostrar la ventana principal
+    game.mostrar_puntaje_total()  # Mostramos el puntaje total
+    print("El juego ha terminado.")  # Mensaje opcional en consola
+    sys.exit()  # Cierra el programa
 
 # Iniciar el juego
 if __name__ == "__main__":
